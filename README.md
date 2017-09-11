@@ -29,4 +29,4 @@ One of the methods to deal with latency is to set the parameters such that the v
 ## Final Video
 Here is a video of the vehicle successfully completing a lap.
 
-[![alt text][image1]](https://youtu.be/2VBNVLNBYJM)
+[![alt text][image1]](https://youtu.be/q8RFOOAbhjQ)
