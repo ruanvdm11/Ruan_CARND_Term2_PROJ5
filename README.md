@@ -13,8 +13,14 @@ The actuator array is used to control the vehicle. In this case it is the thrott
 
 The value passed to the steering actuator is also between [-1, 1] and relates to an angle of postive or negative 25 degrees.
 
-The workflow followed to get a value to the actuators is as follows. At the start data is obtained from the simulator representing x an y points. The points are translated relative to the vehicle's coordinate system. These points are used to obtain a third order polynomial function. The cte (cross track error) and error in orientation (epsi) is calculated. A state variable is set that is passed to the MPC funtion. Variable and actuator constraints are then set whereafter the bounding arrays are given to the ipopt optimizer.
+The workflow followed to get a value to the actuators is as follows. At the start, data is obtained from the simulator representing x an y points. The points are translated relative to the vehicle's coordinate system so that the vehicle position relative to the points can be deterimined. These points are used to obtain a third order polynomial function. The cte (cross track error) and error in orientation (epsi) is calculated from the polynomial function in order to know how far off the vehicle is from the correct route. A state variable is set that is passed to the MPC funtion along with the coefficients of the polynomial function. Variable and actuator constraints are then set whereafter the bounding arrays are given to the ipopt optimizer.
 
-The values returned from the function can then be used directly as the values for the steering angle (has to be taken to radians) and throttle.
+The values returned from the optimizer function can then be used directly as the values for the steering angle (has to be taken to radians) and throttle. The process is then repeated for the next time step.
+
+## Timestep Length and Elapsed Duration
+The timestep length in this instance is 8 and the elapsed duration 0.1. The reason for using the value 8 is that it keeps the vehicle quite agile in places where there are sharp corners. The drawback is that the ride might be too fluctuating. However, in the case where this values is larger, such as 25, the vehicle starting correcting for corners to early which lead to large errors. Thus, for the selected speed and time constants the vehicle performs well.
+
+## Latency
+One of the methods to deal with latency is to set the parameters such that the vehicle does not react too abruptly to change but well enough to navigate the course. The model presented in thsi hand-in has a good trade-off between these two extremities. If after the latency period had passed the model recovers elegantly even though is some cases the difference between the state before and after latency is quite large.
 
 
