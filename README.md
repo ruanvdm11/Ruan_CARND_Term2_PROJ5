@@ -1,5 +1,8 @@
 # Udacity CARND Term 2 Project 5 - Model Predictive Control
 
+[//]: # (Image References)
+[image1]: https://raw.githubusercontent.com/ruanvdm11/Ruan_CARND_Term2_PROJ4/master/Reference%20Images/VideoScreenshot.JPG "Video1"
+
 In this project is was necessary to use the supplied Udacity simulator in order to steer a virtual vehicle around a track using model predictive control. This is an advanced method of control relying on the fact that there is a level of certainty concerning the mathematical model of the system, which in this case would be the kinematic equations of a vehicle.
 
 ## The Model
@@ -23,4 +26,7 @@ The timestep length in this instance is 8 and the elapsed duration 0.1. The reas
 ## Latency
 One of the methods to deal with latency is to set the parameters such that the vehicle does not react too abruptly to change but well enough to navigate the course. The model presented in thsi hand-in has a good trade-off between these two extremities. If after the latency period had passed the model recovers elegantly even though is some cases the difference between the state before and after latency is quite large.
 
+## Final Video
+Here is a video of the vehicle successfully completing a lap.
 
+[![alt text][image1]](https://youtu.be/2VBNVLNBYJM)
