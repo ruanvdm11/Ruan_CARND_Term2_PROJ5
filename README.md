@@ -1,7 +1,7 @@
 # Udacity CARND Term 2 Project 5 - Model Predictive Control
 
 [//]: # (Image References)
-[image1]: https://raw.githubusercontent.com/ruanvdm11/Ruan_CARND_Term2_PROJ4/master/Reference%20Images/VideoScreenshot.JPG "Video1"
+[image1]: https://raw.githubusercontent.com/ruanvdm11/Ruan_CARND_Term2_PROJ5/master/Reference_Images/Video_screenshot.JPG "Video1"
 
 In this project is was necessary to use the supplied Udacity simulator in order to steer a virtual vehicle around a track using model predictive control. This is an advanced method of control relying on the fact that there is a level of certainty concerning the mathematical model of the system, which in this case would be the kinematic equations of a vehicle.
 
